@@ -17,10 +17,18 @@ function Login() {
       const response = await axios.post("https://auchanserver.vercel.app/auth/login",{
         username,
         password
+      }).then((response)=>{
+        console.log(response)
+         
+          if(response.data.token){
+            setCookies("access_token", response.data.token)
+            window.localStorage.setItem("userId", response.data.userID)
+            window.localStorage.setItem("name", response.data.name)
+            navigate("/")
+          }
+         
       });
-      setCookies("access_token", response.data.token)
-      window.localStorage.setItem("userId", response.data.userID)
-      navigate("/")
+      
     } catch(err){
       console.error(err)
     }

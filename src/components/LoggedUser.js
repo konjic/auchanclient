@@ -13,9 +13,12 @@ function LoggedUser() {
         })
       },[])
     
+    
 
   return (
     <div>
+      <h2> Hello {window.localStorage.getItem("name")  }</h2>
+      <h2> Your id is {window.localStorage.getItem("userId")  }</h2>
         <p> Logged in user data</p>
         <p>latitude {useData.latitude}</p>
         <p>longitude {useData.longitude}</p>
