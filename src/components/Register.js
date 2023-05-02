@@ -15,7 +15,9 @@ function Register() {
     try{
       await axios.post("https://auchanserver.vercel.app/auth/register",{
         username,
-        password
+        password,
+        name,
+        email
       });
       alert("Registration completed")
     } catch(err){
