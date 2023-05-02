@@ -5,6 +5,8 @@ function Register() {
 
   const [username, setUsername] =useState("")
   const [password, setPassword] =useState("")
+  const [name, setName] =useState("")
+  const [email, setEmail] =useState("")
 
   const onSubmit = async(event)=>{
     event.preventDefault()
@@ -24,6 +26,26 @@ function Register() {
     <div>
       <form onSubmit={onSubmit}>
         <h1>Register</h1>
+        <div>
+          <label htmlFor='username'> Name </label>
+          <input
+          type="text"
+          id="name"
+          onChange={(event)=>setName(event.target.value)}
+          value={name}
+          />
+        </div>
+
+        <div>
+          <label htmlFor='username'> Email </label>
+          <input
+          type="email"
+          id="email"
+          onChange={(event)=>setEmail(event.target.value)}
+          value={email}
+          />
+        </div>
+
         <div>
           <label htmlFor='username'> Username </label>
           <input
